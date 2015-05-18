@@ -32,6 +32,10 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
+#ifdef _PSP
+#include <sys/fd_set.h>
+#endif
+
 #include <libARSAL/ARSAL_Print.h>
 #include <libARSAL/ARSAL_Socket.h>
 #include <libARSAL/ARSAL_Sem.h>
