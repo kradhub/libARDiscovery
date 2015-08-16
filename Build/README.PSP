@@ -1,0 +1,11 @@
+To compile library for PSP, first setup environment:
+$ export PSPDEV=<path-to-pspdev>
+$ export PATH=$PSPDEV/bin:$PSPDEV/psp/bin/:$PATH
+$ export CFLAGS="$CFLAGS -I$(psp-config --pspsdk-path)/include -I$(psp-config --pspdev-path)/include"
+$ export LDFLAGS="$LDFLAGS -L$(psp-config --pspsdk-path)/lib -L$(psp-config --psp-prefix)/lib -lc -lpspuser"
+$ export LIBS="$LIBS -lc -lpspuser"
+
+Then configure, make and make install
+$ ./configure --host=psp --prefix=$(psp-config --psp-prefix)
+$ make
+$ make install
